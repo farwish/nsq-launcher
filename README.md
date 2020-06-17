@@ -1,3 +1,3 @@
-# nsqServer
+# nsq-launcher
 
-A simple nsq node launcher.
+nsq node launcher.
