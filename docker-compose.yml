@@ -8,7 +8,9 @@ services:
       - 4161:4161
   nsqd:
     image: nsqio/nsq:v1.2.0
-    command: /nsqd --lookupd-tcp-address=nsqlookupd:4160
+    command: /nsqd --lookupd-tcp-address=nsqlookupd:4160 --data-path=/data/nsq-launcher
+    volumes:
+      - ${NSQD_HOST_DATA_PATH}:/data/nsq-launcher
     depends_on:
       - nsqlookupd
     ports:
